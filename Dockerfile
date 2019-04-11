@@ -4,7 +4,7 @@ MAINTAINER Syhily, syhily@gmail.com
 # Docker Build Arguments, For further upgrade
 ENV ORANGE_PATH="/usr/local/orange"
 ARG LOR_VERSION="0.3.4"
-ENV ORANGE_VERSION="0.6.4"
+ENV ORANGE_VERSION="0.7.0"
 
 ADD docker-entrypoint.sh docker-entrypoint.sh
 
@@ -31,6 +31,10 @@ RUN \
     && ln -s /usr/local/openresty/nginx/sbin/nginx /usr/local/bin/nginx \
 
     && cd /tmp \
+    && luarocks install https://luarocks.org/manifests/steved/penlight-1.5.4-1.rockspec \
+    && luarocks install https://luarocks.org/manifests/kong/lua-resty-dns-client-2.2.0-1.rockspec
+    && luarocks install https://luarocks.org/lua-resty-http-0.13-0.src.rock
+    && luarocks install https://luarocks.org/manifests/luarocks/luasocket-3.0rc1-2.rockspec
     && curl -fSL https://github.com/sumory/lor/archive/v${LOR_VERSION}.tar.gz -o lor.tar.gz \
     && tar zxf lor.tar.gz \
     && cd /tmp/lor-${LOR_VERSION} \
