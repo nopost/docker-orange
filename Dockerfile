@@ -32,8 +32,8 @@ RUN \
 
     && cd /tmp \
     && luarocks install https://luarocks.org/manifests/steved/penlight-1.5.4-1.rockspec \
-    && luarocks install https://luarocks.org/manifests/kong/lua-resty-dns-client-2.2.0-1.rockspec
-    && luarocks install https://luarocks.org/lua-resty-http-0.13-0.src.rock
+    && luarocks install https://luarocks.org/manifests/kong/lua-resty-dns-client-2.2.0-1.rockspec \
+    && luarocks install https://luarocks.org/lua-resty-http-0.13-0.src.rock \
     && luarocks install https://luarocks.org/manifests/luarocks/luasocket-3.0rc1-2.rockspec
     && curl -fSL https://github.com/sumory/lor/archive/v${LOR_VERSION}.tar.gz -o lor.tar.gz \
     && tar zxf lor.tar.gz \
