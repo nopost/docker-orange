@@ -4,7 +4,7 @@ MAINTAINER Syhily, syhily@gmail.com
 # Docker Build Arguments, For further upgrade
 ENV ORANGE_PATH="/usr/local/orange"
 ARG LOR_VERSION="0.3.4"
-ENV ORANGE_VERSION="0.7.0"
+ENV ORANGE_VERSION="0.7.1"
 
 ADD docker-entrypoint.sh docker-entrypoint.sh
 
